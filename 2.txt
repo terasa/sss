@@ -1,0 +1,117 @@
+diff --git a/Project.cs b/Project.cs
+index 9c961e5..4bc03b1 100644
+--- a/Project.cs
++++ b/Project.cs
+@@ -20,14 +20,6 @@ namespace clocking.Backend
+             }
+         }
+ 
+-        public static Project GetProjectById(int id)
+-        {
+-            var query = from q in projects
+-                        where q.Id == id
+-                        select q;
+-
+-            return query.First();
+-        }
+ 
+         private string name;
+         private int id;
+@@ -44,6 +36,10 @@ namespace clocking.Backend
+                 this.name = value;
+             }
+         }
++        public void getMy
++        {
++            new 
++        }
+         public int Id
+         {
+             get
+diff --git a/Ticket.cs b/Ticket.cs
+index a61264d..b4d9e9d 100644
+--- a/Ticket.cs
++++ b/Ticket.cs
+@@ -11,8 +11,6 @@ namespace clocking.Backend
+         private string content;
+         private Project projectIn;
+         private User createdBy;
+-        private List<User> assigned;
+-        private List<Label> labels;
+         private webservisy.TicketStatus status;
+         private webservisy.TicketPriority priority;
+         private int id;
+@@ -23,6 +21,7 @@ namespace clocking.Backend
+         {
+             get
+             {
++                ValueType;
+                 return this.name;
+             }
+             set
+@@ -63,17 +62,6 @@ namespace clocking.Backend
+                 this.assigned = value;
+             }
+         }
+-        public User CreatedBy
+-        {
+-            get
+-            {
+-                return this.createdBy;
+-            }
+-            set
+-            {
+-                this.createdBy = value;
+-            }
+-        }
+         public List<Label> Labels
+         {
+             get
+diff --git a/TicketHistory.cs b/TicketHistory.cs
+new file mode 100644
+index 0000000..699e703
+--- /dev/null
++++ b/TicketHistory.cs
+@@ -0,0 +1,42 @@
++﻿using System;
++using System.Collections.Generic;
++using System.Linq;
++using System.Text;
++
++namespace clocking.Backend
++{
++    class TicketHistory
++    {
++        private User updatedBy;
++        private string content;
++
++        public User UpdateBy
++        {
++            get
++            {
++                return this.updatedBy;
++            }
++            set
++            {
++                this.updatedBy = value;
++            }
++        }
++        public string Content
++        {
++            get
++            {
++                return this.content;
++            }
++            set
++            {
++                this.content = value;
++            }
++        }
++
++        public TicketHistory(User updatedBy, string content)
++        {
++            this.updatedBy = updatedBy;
++            this.content = content;
++        }
++    }
++}
