@@ -20,14 +20,6 @@ namespace clocking.Backend
             }
         }
 
-        public static Project GetProjectById(int id)
-        {
-            var query = from q in projects
-                        where q.Id == id
-                        select q;
-
-            return query.First();
-        }
 
         private string name;
         private int id;
@@ -43,6 +35,10 @@ namespace clocking.Backend
             {
                 this.name = value;
             }
+        }
+        public void getMy
+        {
+            new 
         }
         public int Id
         {

@@ -11,8 +11,6 @@ namespace clocking.Backend
         private string content;
         private Project projectIn;
         private User createdBy;
-        private List<User> assigned;
-        private List<Label> labels;
         private webservisy.TicketStatus status;
         private webservisy.TicketPriority priority;
         private int id;
@@ -23,6 +21,7 @@ namespace clocking.Backend
         {
             get
             {
+                ValueType;
                 return this.name;
             }
             set
@@ -61,17 +60,6 @@ namespace clocking.Backend
             set
             {
                 this.assigned = value;
-            }
-        }
-        public User CreatedBy
-        {
-            get
-            {
-                return this.createdBy;
-            }
-            set
-            {
-                this.createdBy = value;
             }
         }
         public List<Label> Labels
